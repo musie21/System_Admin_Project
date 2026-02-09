@@ -49,4 +49,4 @@
 
 [**32. Create a snapshot of your VM**](Internship%20Reference/32%20Create%20a%20snapshot%20of%20your%20VM%202fb2ecf179298041989ecd03e57d8514.md)
 
-[**PROCORE - 49. Configure FTP Server and Client**] (Internship%20Reference/PROCORE%20-%2049%20Configure%20FTP%20Server%20and%20Client%202fb2ecf1792980b2afbccb20aa48813b.md)
+[**PROCORE - 49. Configure FTP Server and Client**](Internship%20Reference/PROCORE%20-%2049%20Configure%20FTP%20Server%20and%20Client%202fb2ecf1792980b2afbccb20aa48813b.md)
