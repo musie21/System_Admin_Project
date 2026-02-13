@@ -121,41 +121,6 @@ You should connect **without any fingerprint mismatch warnings**.
 
 ---
 
-## 🧰 Optional: Script Automation
-
-You can save the following script as `/opt/scripts/update_known_hosts.sh`:
-
-```bash
-#!/bin/bash
-# Description: Refreshes SSH host key for FreeIPA-integrated systems
-# Usage: sudo ./update_known_hosts.sh <IP>
-
-if [ -z "$1" ]; then
-  echo "Usage: $0 <IP_ADDRESS>"
-  exit 1
-fi
-
-IP=$1
-
-echo "[*] Removing old key entries..."
-sudo ssh-keygen -R $IP -f /var/lib/sss/pubconf/known_hosts 2>/dev/null
-ssh-keygen -R $IP 2>/dev/null
-sudo sss_cache -E
-
-echo "[*] Fetching new SSH host key..."
-sudo ssh-keyscan -H $IP | sudo tee -a /var/lib/sss/pubconf/known_hosts >/dev/null
-
-echo "[+] Host key for $IP successfully updated!"
-
-```
-
-Run it as:
-
-```bash
-sudo bash /opt/scripts/update_known_hosts.sh 10.1.30.157
-
-```
-
 ---
 
 ## 📘 Summary
@@ -168,5 +133,3 @@ sudo bash /opt/scripts/update_known_hosts.sh 10.1.30.157
 | 4 | (Optional) Automate | Standardize for future rebuilds |
 
 ---
-
-Would you like me to export this documentation as a **PDF** (with title page and section formatting) so you can store it in your internal “Linux Troubleshooting Runbook” folder?
